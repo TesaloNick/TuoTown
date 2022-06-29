@@ -1,23 +1,65 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom'
+import CartData from './context';
+import Header from './components/Header/Header'
 
 function App() {
+  // const [cartProducts, setCartProducts] = useState(JSON.parse(localStorage.getItem('cartProducts')) || [])
+  // const [users, setUsers] = React.useState(JSON.parse(localStorage.getItem('usersData')) || [])
+  // const [loginState, setLoginState] = useState(JSON.parse(localStorage.getItem('loginState')) || false)
+  // if (!localStorage.getItem('catalogData')) localStorage.setItem('catalogData', JSON.stringify(CatalogData))
+  // const [catalogData, setCatalogData] = useState(JSON.parse(localStorage.getItem('catalogData')))
+  // if (!localStorage.getItem('filters')) localStorage.setItem('filters', JSON.stringify(FiltersData))
+  // const [filters, setFilters] = useState(JSON.parse(localStorage.getItem('filters')) || [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <CartData.Provider value={{}}>
+          <Header />
+          {/* <Switch>
+            <Route exact path='/'> {/* Route для главной страницы содержит prop exact, благодаря которому пути сравниваются строго*
+              <Catalog catalog={catalogData} />
+            </Route>
+            <Route path='/sign-up'>
+              <SignUp />
+            </Route>
+            <Route path='/log-in'>
+              <LogIn />
+            </Route>
+            <Route path='/cart'>
+              <Cart />
+            </Route>
+            <Route path='/men'>
+              <Catalog catalog={catalogData.filter(item => item.shopFor.includes('Men'))} />
+            </Route>
+            <Route path='/women'>
+              <Catalog catalog={catalogData.filter(item => item.shopFor.includes('Women'))} />
+            </Route>
+            <Route path='/kids'>
+              <Catalog catalog={catalogData.filter(item => item.shopFor.includes('Kids'))} />
+            </Route>
+            <Route path='/jersey'>
+              <Catalog catalog={catalogData.filter(item => item.department.includes('Jerseys'))} />
+            </Route>
+            <Route path='/t-shirts'>
+              <Catalog catalog={catalogData.filter(item => item.department.includes('T-Shirts'))} />
+            </Route>
+            <Route path='/footwear'>
+              <Catalog catalog={catalogData.filter(item => item.department.includes('Footwear'))} />
+            </Route>
+            <Route path='/accesories'>
+              <Catalog catalog={catalogData.filter(item => item.department.includes('Accessories'))} />
+            </Route>
+            <Route path='/account'>
+              <Account />
+            </Route>
+          </Switch>
+          <Footer /> */}
+        </CartData.Provider>
+      </BrowserRouter>
+
     </div>
   );
 }
