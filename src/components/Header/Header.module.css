@@ -1,1 +1,5 @@
-/* No CSS *//*# sourceMappingURL=Header.module.css.map */
+.header {
+  background: url(../../assets/img/Header/background.png) center/cover no-repeat;
+  height: 500px;
+}
+/*# sourceMappingURL=Header.module.css.map */

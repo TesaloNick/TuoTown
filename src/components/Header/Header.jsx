@@ -9,8 +9,11 @@ import CartData from './../../context';
 export default function Header() {
 
   return (
-    <header className='header'>
-      <Head />
+    <header className={styles.header}>
+      <div className={`${styles.header__container} ${styles.container}`}>
+
+        <Head />
+      </div >
     </header >
   );
 }

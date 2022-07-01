@@ -1,4 +1,62 @@
-p {
-  font-size: 45px;
+.head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(33, 33, 33, 0.8);
+  padding: 23px 0px 24px;
+}
+
+.head__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 26px;
+}
+
+.head__left div {
+  color: #fff;
+  font-size: 24px;
+}
+
+.head__phone {
+  font-family: "Jura";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.head__logo {
+  width: 146px;
+}
+
+@media (max-width: 400px) {
+  .head__logo {
+    width: 100px;
+  }
+}
+
+.head__logo img {
+  width: 100%;
+}
+
+.head__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 26px;
+}
+
+.head__right div {
+  color: #fff;
+  font-size: 24px;
 }
 /*# sourceMappingURL=Head.module.css.map */
