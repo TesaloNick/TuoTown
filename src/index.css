@@ -87,14 +87,9 @@ h6 {
   font-size: inherit;
   font-weight: inherit;
 }
-/* .container{
-  max-width: 1200px;
-  margin: auto;
+body{
+  background: #373737;
+  z-index: -1;
 }
-@media (max-width: 1230px) {
-  .container{
-    width: 100%;
-    padding: 0 15px;
-  } 
-} */
+
 /*# sourceMappingURL=zeroing.css.map */
