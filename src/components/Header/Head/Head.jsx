@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import styles from './Head.module.css'
 import { NavLink } from 'react-router-dom'
 import logoImg from './../../../assets/img/Header/Head/logo.png'
+import headerBackground from './../../../assets/img/Header/background.png'
 
 export default function Head() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -20,6 +21,11 @@ export default function Head() {
       {isMenuOpen ?
         <div className={`${styles.active_menu} ${styles.head__menu}`}>
           <div className={`icon-arrow ${styles.icon_arrow}`} onClick={() => closeMenu()}></div>
+          <div className={styles.head__left_background}>
+            <div>
+              <img src={headerBackground} alt="" />
+            </div>
+          </div>
           <ul className={`${styles.head__menu_list_main}`}>
             <NavLink to='/'>
               <li className={styles.head__menu_item}>Кухонные ножи TUOTOWN</li>

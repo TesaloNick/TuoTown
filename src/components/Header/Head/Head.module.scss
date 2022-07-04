@@ -132,6 +132,31 @@
     }
   }
 
+  &__left_background {
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    max-width: 524px;
+
+    img {
+      width: 524px;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: blur(33px);
+    }
+    div {
+      position: relative;
+      top: 0px;
+      left: 0px;
+      width: 444px;
+      height: 100%;
+      overflow-x: hidden;
+    }
+  }
+
   &__menu_list_main {
     display: flex;
     flex-direction: column;
