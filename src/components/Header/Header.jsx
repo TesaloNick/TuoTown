@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <div className={`${styles.header__container} ${styles.container}`}>
+      <div className={styles.container}>
 
         <Head />
       </div >

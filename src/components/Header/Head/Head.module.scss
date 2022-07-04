@@ -1,18 +1,47 @@
 .head {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
   justify-content: space-between;
   align-items: center;
+  gap: 26px;
   background: rgba(33, 33, 33, 0.8);
   // backdrop-filter: blur(11px);
-  padding: 23px 0px 24px;
+  padding: 18px 0px;
+  position: relative;
+
+  @media (max-width: 600px) {
+    grid-template-columns: auto auto 1fr;
+  }
+
+  @media (max-width: 375px) {
+    padding: 10px 0px 9px;
+  }
 
   &__left {
     display: flex;
     gap: 26px;
 
+    @media (max-width: 600px) {
+      .icon_location,
+      .head__phone {
+        display: none;
+      }
+    }
+
     div {
       color: #fff;
       font-size: 24px;
+      cursor: pointer;
+    }
+
+    .icon_phone {
+      display: none;
+
+      @media (max-width: 600px) {
+        display: block;
+        color: #fff;
+        font-size: 24px;
+      }
     }
   }
 
@@ -29,7 +58,12 @@
   &__logo {
     width: 146px;
 
-    @media (max-width: 400px) {
+    @media (max-width: 600px) {
+      order: 3;
+      justify-self: end;
+    }
+
+    @media (max-width: 375px) {
       width: 100px;
     }
 
@@ -42,9 +76,135 @@
     display: flex;
     gap: 26px;
 
+    @media (max-width: 600px) {
+      order: 2;
+
+      .icon_email,
+      .icon_search {
+        display: none;
+      }
+    }
+
     div {
       color: #fff;
       font-size: 24px;
+      cursor: pointer;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0%, 0%, 0%, 0.6);
+    transition: 0.5s ease-in-out;
+    padding: 115px 0px 0px 48px;
+
+    @media (max-width: 375px) {
+      padding: 84px 0px 0px 15px;
+    }
+
+    &.active_menu {
+      right: 0;
+      transition: 0.5s ease-in-out;
+    }
+
+    .icon_arrow {
+      color: #fff;
+      font-size: 8px;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: 40px;
+      left: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: rotate(-90deg);
+      cursor: pointer;
+
+      @media (max-width: 375px) {
+        top: 30px;
+        left: 15px;
+      }
+    }
+  }
+
+  &__menu_list_main {
+    display: flex;
+    flex-direction: column;
+    gap: 43px;
+    position: relative;
+    padding: 0 0px 70px 0px;
+
+    @media (max-width: 768px) {
+      padding: 0px 0px 40px 0px;
+    }
+
+    @media (max-width: 375px) {
+      padding: 0 0px 30px 0px;
+    }
+
+    li {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      text-transform: uppercase;
+      color: #ffffff;
+
+      @media (max-width: 375px) {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &__menu_list_rest {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+
+    li {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 18px;
+      text-transform: uppercase;
+      opacity: 0.6;
+      color: #ffffff;
+    }
+  }
+}
+
+.active_menu {
+  @media (max-width: 600px) {
+    &.icon_email {
+      display: block;
+      position: fixed;
+      top: 40px;
+      right: 69px;
+
+      @media (max-width: 375px) {
+        top: 30px;
+      }
+    }
+
+    &.icon_search {
+      display: block;
+      position: fixed;
+      top: 40px;
+      right: 15px;
+
+      @media (max-width: 375px) {
+        top: 30px;
+      }
     }
   }
 }

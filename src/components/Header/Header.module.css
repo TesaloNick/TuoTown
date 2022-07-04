@@ -1,5 +1,34 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media (max-width: 1230px) {
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+
 .header {
-  background: url(../../assets/img/Header/background.png) center/cover no-repeat;
   height: 500px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .header:before {
+    -webkit-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+  }
+}
+
+.header:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url(../../assets/img/Header/background.png) center/cover no-repeat;
 }
 /*# sourceMappingURL=Header.module.css.map */
