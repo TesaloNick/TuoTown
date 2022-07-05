@@ -3,16 +3,20 @@ import React, { useContext, useEffect, useState } from 'react';
 import styles from './Header.module.css'
 import Nav from './Nav/Nav'
 import Head from './Head/Head'
+import Slider from './Slider/Slider'
 import { NavLink } from 'react-router-dom'
 import CartData from './../../context';
+
+
 
 export default function Header() {
 
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-
         <Head />
+        <Slider />
+
       </div >
     </header >
   );
